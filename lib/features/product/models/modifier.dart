@@ -1,13 +1,15 @@
-class Modifier {
-  final String title;
-  final int minQuantity;
-  final int? maxQuantity;
-  final bool allowRepeated;
+import 'package:flutter_menu/features/product/models/modifier_info.dart';
 
-  Modifier(
-    this.title,
-    this.minQuantity,
-    this.maxQuantity,
-    this.allowRepeated,
-  );
+class Modifier {
+  final int id;
+  final ModifierInfo info;
+
+  Modifier({
+    required this.id,
+    required this.info,
+  });
+
+  Modifier.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        info = ModifierInfo.fromJson(json['info']);
 }
